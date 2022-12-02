@@ -17,19 +17,16 @@ public class Day02Part1
 
         Pattern pattern = Pattern.compile( "(\\w)\\s(\\w)" );
 
-        int[] i = { 0 };
-
         System.out.println(
                 input.map( o -> {
                          Matcher matcher = pattern.matcher( o );
                          //noinspection ResultOfMethodCallIgnored
                          matcher.find();
-                         return Pair.<Shape,Shape>of( Shape.parse( matcher.group( 1 ) ), Shape.parse( matcher.group( 2 ) ) );
+                         return Pair.of( Shape.parse( matcher.group( 1 ) ), Shape.parse( matcher.group( 2 ) ) );
                      } )
                      .map( o -> o.getRight().playedAgainst( o.getLeft() ) )
                      .reduce( 0, Integer::sum )
         );
-        System.out.println(i[0]);
     }
 
     private enum Shape
@@ -57,7 +54,7 @@ public class Day02Part1
 
         private final int score;
 
-        private Shape(int score)
+        Shape(int score)
         {
             this.score = score;
         }

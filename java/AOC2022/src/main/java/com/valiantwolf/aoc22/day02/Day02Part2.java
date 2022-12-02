@@ -17,8 +17,6 @@ public class Day02Part2
 
         Pattern pattern = Pattern.compile( "(\\w)\\s(\\w)" );
 
-        int[] i = { 0 };
-
         System.out.println(
                 input.map( o -> {
                          Matcher matcher = pattern.matcher( o );
@@ -33,7 +31,6 @@ public class Day02Part2
                      } )
                      .reduce( 0, Integer::sum )
         );
-        System.out.println(i[0]);
     }
 
     private enum Command
