@@ -3,13 +3,13 @@ package com.valiantwolf.aoc22.day01;
 import java.util.Comparator;
 import java.util.regex.Pattern;
 
-import static com.valiantwolf.aoc22.util.InputUtil.fileArgAsString;
+import static com.valiantwolf.aoc22.util.InputUtil.argFileAsString;
 
 public class Day01Part2
 {
     public static void main( String... args )
     {
-        String input = fileArgAsString( args );
+        String input = argFileAsString( args );
 
         System.out.println(
                 Pattern.compile( "\n\n" )
